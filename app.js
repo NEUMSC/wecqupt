@@ -82,7 +82,7 @@ App({
                                 key: info.encryptedData,
                                 iv: info.iv
                             },
-                            success: function(res) {
+                            success: function(res) { //服务器返回了一堆游泳的东西：例如openid
                                 if (res.data && res.data.status >= 200 && res.data.status < 400) {
                                     var status = false,
                                         data = res.data.data;
@@ -138,7 +138,7 @@ App({
         _this._user.is_bind = data.is_bind;
         _this._user.openid = data.user.openid;
         _this._user.teacher = (data.user.type == '教职工');
-        _this._user.we = data.user;
+        _this._user.we = data.user; //用户详情
         _this._time = data.time;
         _this._t = data['\x74\x6f\x6b\x65\x6e'];
         console.log(_this);
